@@ -1,0 +1,94 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[BUG] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the form below.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component is affected?
+      options:
+        - n8n Workflows
+        - Windows/PowerShell Scripts
+        - M365 Automations
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: file
+    attributes:
+      label: Affected File/Workflow
+      description: Path or name of the affected file
+      placeholder: e.g., /n8n/workflows/ioc-enrichment.json
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: Tell us what happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Import workflow...
+        2. Configure...
+        3. Run...
+        4. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your environment details
+      placeholder: |
+        - OS: Windows Server 2022
+        - PowerShell Version: 7.4
+        - n8n Version: 1.x.x
+        - Other relevant versions...
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: Paste any relevant error messages or logs (sanitize sensitive data!)
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have removed any sensitive data from logs and screenshots
+          required: true

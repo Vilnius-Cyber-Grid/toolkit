@@ -1,0 +1,82 @@
+name: 📚 Documentation Improvement
+description: Suggest improvements to documentation
+title: "[DOCS] "
+labels: ["documentation", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve our documentation!
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation is this about?
+      options:
+        - README
+        - Script/Workflow documentation
+        - Usage examples
+        - Playbook/Recipe
+        - Installation guide
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Where is the documentation that needs improvement?
+      placeholder: e.g., /docs/playbooks/incident-response.md or README.md
+    validations:
+      required: false
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What's the issue with the documentation?
+      options:
+        - Missing documentation
+        - Outdated information
+        - Unclear/confusing content
+        - Incorrect information
+        - Missing examples
+        - Typo/grammatical error
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what needs to be improved
+      placeholder: Explain what's missing, unclear, or incorrect...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: How would you improve it?
+      placeholder: Provide suggested text or describe the improvement...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I would be willing to submit a PR with this improvement
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true

@@ -1,0 +1,104 @@
+name: 🔧 Script/Workflow Request
+description: Request a new script or workflow
+title: "[REQUEST] "
+labels: ["request", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request a new script, workflow, or automation for the toolkit.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of automation are you requesting?
+      options:
+        - n8n Workflow
+        - PowerShell Script (Audit)
+        - PowerShell Script (Hardening)
+        - PowerShell Script (Incident Response)
+        - PowerShell Script (Log Collection)
+        - M365 Power Automate Flow
+        - M365 Graph API Script
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe the security use case or scenario
+      placeholder: |
+        As a SOC analyst, I need to...
+        This would help with...
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What should this script/workflow do?
+      placeholder: |
+        - Input: ...
+        - Process: ...
+        - Output: ...
+        - Error handling: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: integrations
+    attributes:
+      label: Integrations
+      description: What systems or services should this integrate with?
+      placeholder: |
+        - SIEM (Splunk/Sentinel/etc.)
+        - Ticketing system
+        - Threat intel platform
+        - etc.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: security-impact
+    attributes:
+      label: Security Impact
+      description: Does this involve sensitive operations?
+      options:
+        - Read-only / Information gathering
+        - Configuration changes
+        - Remediation actions
+        - Data collection (logs/artifacts)
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Any references, similar tools, or documentation?
+      placeholder: Links to similar projects, MITRE techniques, vendor docs, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I have a working prototype I can share
+        - label: I would be willing to help test this
+        - label: I can provide sample data/scenarios for testing
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: This request does not require organization-specific or sensitive data
+          required: true
