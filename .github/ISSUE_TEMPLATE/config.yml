@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/YOUR_ORG/toolkit/discussions
+    about: Ask questions and share ideas in Discussions
+  - name: 🔐 Security Issue
+    url: https://github.com/YOUR_ORG/toolkit/security/advisories/new
+    about: Report security vulnerabilities privately

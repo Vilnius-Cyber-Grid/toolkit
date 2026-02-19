@@ -1,0 +1,140 @@
+# =============================================================================
+# SOC Toolkit - .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Credentials & Secrets (CRITICAL - never commit these)
+# -----------------------------------------------------------------------------
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials.json
+secrets.json
+**/credentials/*.json
+!**/credentials/*.example.json
+.env
+.env.*
+!.env.example
+*.secret
+api_keys.txt
+tokens.json
+
+# -----------------------------------------------------------------------------
+# OS Generated Files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# -----------------------------------------------------------------------------
+# Editor & IDE
+# -----------------------------------------------------------------------------
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# -----------------------------------------------------------------------------
+# n8n Specific
+# -----------------------------------------------------------------------------
+# Actual credential files (keep only examples)
+n8n/credentials/*.json
+!n8n/credentials/*.example.json
+!n8n/credentials/README.md
+
+# n8n database and cache
+.n8n/
+*.sqlite
+*.sqlite-journal
+
+# -----------------------------------------------------------------------------
+# PowerShell / Windows Scripts
+# -----------------------------------------------------------------------------
+# Output and log files
+scripts/**/*.log
+scripts/**/*.csv
+scripts/**/*.xml
+!scripts/**/*.example.csv
+!scripts/**/*.example.xml
+
+# Collected artifacts (incident response)
+scripts/**/output/
+scripts/**/artifacts/
+scripts/**/collected/
+scripts/**/exports/
+
+# -----------------------------------------------------------------------------
+# M365 / Azure
+# -----------------------------------------------------------------------------
+# Token cache
+msal_token_cache.json
+.azure/
+azure.json
+
+# Power Automate exports with embedded credentials
+m365/**/*_with_connections.zip
+
+# -----------------------------------------------------------------------------
+# Logs & Output
+# -----------------------------------------------------------------------------
+*.log
+logs/
+output/
+tmp/
+temp/
+cache/
+
+# -----------------------------------------------------------------------------
+# Python (if any scripts use it)
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+ENV/
+
+# -----------------------------------------------------------------------------
+# Node.js (if any tooling)
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -----------------------------------------------------------------------------
+# Archives & Backups
+# -----------------------------------------------------------------------------
+*.bak
+*.backup
+*.old
+*.orig
+*.zip
+*.tar.gz
+*.7z
+!docs/**/*.zip
+
+# -----------------------------------------------------------------------------
+# Local Configuration (org-specific settings)
+# -----------------------------------------------------------------------------
+config.local.*
+*.local.json
+*.local.yml
+*.local.yaml
+local/
